@@ -1,0 +1,6 @@
+include LICENSE.rst
+graft nlp/static
+graft nlp/templates
+graft nlp/route
+graft tests
+global-exclude *.pyc

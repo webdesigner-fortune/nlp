@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="{{url_for('static', filename='fonts/poppins.css')}}" rel="stylesheet" />
+    <link href="{{url_for('static', filename='css/font-awesome.min.css')}}" rel="stylesheet" />
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/main.css')}}" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top justify-content-end">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('main_landing.database')}}">From Database <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+        <a class="navbar-brand" href="{{url_for('main_landing.index')}}">Search Book</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="s130">
+        <form enctype=multipart/form-data action="{{url_for('main_landing.book_list')}}" method="post">
+
+            <div style="justify-content: center;border-radius: 0px; box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 15%);" class="inner-form">
+
+
+                <div class="input-field second-wrap">
+                    <button style="background: #0062cc" onclick="uploadImage()" class="btn-search justify-content-end" type="button">Upload New</button>
+                </div>
+            </div>
+            <span class="info">ex. Game, Music, Video, Photography</span>
+            <div class="inner-form" id="upload">
+                <div class="input-field first-wrap">
+                    <input style="padding: 21px 30px;
+                    font-size: 16px;" id="search" type="file" name="file" />
+                </div>
+                <div class="input-field second-wrap">
+                    <button class="btn-search" type="submit">Upload</button>
+                </div>
+            </div>
+            <ul style="width: 100%;">
+
+                {% for post in books %}
+                <li style="width: 100%;display: block;list-style: none; padding: 10px;border: 1px solid #d3d3d3;margin-top: 12px;border-radius: 5px;background: #fff;">
+                    <div style="width: 100%;display: flex;">
+                        <i style="padding-top: 0.5em;padding-right: 2%;color: GREEN;" class="fa fa-check-circle checkicon"></i>
+                        <div style="width: 100%;display: flex;">
+                            <p style="width: 100%;display: flex;margin-top: 0.4em;">{{post['book_name']}}</p>
+
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div>
+
+            </div>
+
+        </form>
+
+    </div>
+    <script src="{{url_for('static', filename='js/choices.js')}}"></script>
+    <script>
+        document.getElementById('upload').style.display = 'none';
+        //var upload=document.getElementsByID('upload')
+        //upload.sets
+        function uploadImage() {
+            if (document.getElementById('upload').style.display == 'none') {
+                document.getElementById('upload').style.display = 'flex';
+            } else {
+                document.getElementById('upload').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

@@ -1,0 +1,32 @@
+alembic==1.7.6
+beautifulsoup4==4.10.0
+click==7.1.2
+colorama==0.4.4
+EbookLib==0.17.1
+Flask==1.1.4
+Flask-Migrate==2.5.2
+flask-paginate==2022.1.8
+Flask-Script==2.0.6
+Flask-SQLAlchemy==2.4.1
+greenlet==1.1.2
+itsdangerous==1.1.0
+Jinja2==2.11.3
+joblib==1.1.0
+lxml==4.8.0
+Mako==1.1.6
+MarkupSafe==2.0.1
+nltk==3.7
+psycopg2==2.8.4
+psycopg2-binary==2.9.3
+regex==2022.3.2
+six==1.16.0
+soupsieve==2.3.1
+SQLAlchemy==1.4.32
+SQLAlchemy-Utils==0.38.2
+tqdm==4.63.0
+Werkzeug==1.0.1
+##Install all this library as thier version with out no update
+##python manage.py db init
+##python manage.py db migrate
+##python manage.py db upgrade
+##Install using pip install -r requirements.txt
